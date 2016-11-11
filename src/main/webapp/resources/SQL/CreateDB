@@ -1,0 +1,27 @@
+DROP DATABASE IF EXISTS Users_DB;
+
+CREATE DATABASE IF NOT EXISTS Users_DB;
+
+USE Users_DB;
+
+
+CREATE TABLE Users_DB.profiles
+(
+  profile_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  email VARCHAR(30) NOT NULL UNIQUE ,
+  firstname VARCHAR(30) ,
+  lastname VARCHAR(30) ,
+  age INT(30) ,
+  sex VARCHAR(10) ,
+  phone_number VARCHAR(30) ,
+  city VARCHAR(30)
+);
+
+CREATE TABLE Users_DB.users
+(
+  user_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  login VARCHAR(30) NOT NULL UNIQUE ,
+  password VARCHAR(30) NOT NULL ,
+  prof_id INT NOT NULL ,
+  FOREIGN KEY (prof_id) REFERENCES profiles (profile_id)
+);
