@@ -11,6 +11,8 @@
         <spring.version>4.3.2.RELEASE</spring.version>
         <hibernate.version>5.2.2.Final</hibernate.version>
         <mysql.version>5.1.38</mysql.version>
+        <validator.version>1.4.0</validator.version>
+        <jstl.version>1.2</jstl.version>
     </properties>
 
     <dependencies>
@@ -68,7 +70,7 @@
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <version>${jstl.version}</version>
         </dependency>
 
         <dependency>
@@ -110,6 +112,12 @@
             <version>2.0.8</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>${validator.version}</version>
+        </dependency>
+
         <!--<dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -122,12 +130,6 @@
             <artifactId>commons-codec</artifactId>
             <version>1.9</version>
         </dependency>
-
-        <!--<dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>-->
     </dependencies>
 
     <build>

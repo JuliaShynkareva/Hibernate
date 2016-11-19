@@ -41,7 +41,6 @@ public class UserImpl implements UserInterface{
         Query query = sessionFactory.getCurrentSession().createQuery("FROM User WHERE login = :login");
         query.setParameter("login", login);
         return query.list().size() > 0;
-        //return false;
     }
 
     @Override
@@ -50,6 +49,5 @@ public class UserImpl implements UserInterface{
         Query query = sessionFactory.getCurrentSession().createQuery(userHQL);
         query.setParameter("login", login);
         return (User) query.uniqueResult();
-        //return null;
     }
 }

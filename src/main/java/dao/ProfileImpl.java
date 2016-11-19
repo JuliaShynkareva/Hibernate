@@ -37,16 +37,15 @@ public class ProfileImpl implements ProfileInterface{
 
     @Override
     public Profile getProfileById(String profileId) {
-        Profile profile = sessionFactory.getCurrentSession().get(Profile.class, profileId);
+        Profile profile = sessionFactory.getCurrentSession().get(Profile.class, Long.valueOf(profileId));
         return profile;
     }
 
     @Override
     public boolean isEmailExists(String email) {
-        /*String profileHQL = "FROM entity.Profile WHERE email = :email";
+        String profileHQL = "FROM entity.Profile WHERE email = :email";
         Query query = sessionFactory.getCurrentSession().createQuery(profileHQL);
         query.setParameter("email", email);
-        return query.list().size() > 0;*/
-        return false;
+        return query.list().size() > 0;
     }
 }

@@ -14,8 +14,10 @@
 
     <context:component-scan base-package="controller"/>
     <context:component-scan base-package="dao"/>
+    <context:component-scan base-package="dto"/>
     <context:component-scan base-package="entity"/>
     <context:component-scan base-package="service"/>
+    <context:component-scan base-package="validator"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -57,16 +59,14 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <!--<bean id="multipartResolver"
-          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        &lt;!&ndash; one of the properties available; the maximum file size in bytes &ndash;&gt;
-        <property name="maxUploadSize" value="10000000"/>
-    </bean>-->
-
     <bean id="userDAO" class="dao.UserImpl"/>
     <bean id="profileDAO" class="dao.ProfileImpl"/>
 
     <bean id="userService" class="service.UserService"/>
     <bean id="profileService" class="service.ProfileService"/>
+
+    <bean id="userValidator" class="validator.UserValidator"/>
+    <bean id="userNewValidator" class="validator.NewUserValidator"/>
+    <bean id="profileValidator" class="validator.ProfileValidator"/>
 
 </beans>
