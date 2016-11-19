@@ -10,10 +10,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<c:if test="${sessionScope.get('entry') ne null}">
-  ${pageContext.forward("/profile")}
-</c:if>
-
 <c:if test="${!incorrect.equals('undefined')}">
   <script>alert('${incorrect}');</script>
 </c:if>

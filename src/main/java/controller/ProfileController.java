@@ -38,16 +38,11 @@ public class ProfileController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String profileView(ModelMap model, HttpSession session) {
-        if(session.getAttribute("entry").equals(U_NOT_ENTER)){
-            return "redirect:/";
-        }
-        else {
-            String profileId = (String) session.getAttribute("profileId");
-            ProfileDTO profileDTO = entityConvertToDTO(profileService.getById(profileId));
-            model.addAttribute("profile", profileDTO);
-            model.addAttribute("profile_edit", DATA_NOT_UPDATE);
-            return "privatePage";
-        }
+        String profileId = (String) session.getAttribute("profileId");
+        ProfileDTO profileDTO = entityConvertToDTO(profileService.getById(profileId));
+        model.addAttribute("profile", profileDTO);
+        model.addAttribute("profile_edit", DATA_NOT_UPDATE);
+        return "privatePage";
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)

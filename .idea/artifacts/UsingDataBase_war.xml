@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="UsingDataBase:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="UsingDataBase.war">
+      <element id="artifact" artifact-name="UsingDataBase:war exploded" />
+    </root>
+  </artifact>
+</component>
